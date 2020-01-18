@@ -11,6 +11,12 @@ class Post(models.Model):
     )
     created = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return '{author} : {content}'.format(
+            # author은 User을 참조하는데
+            author = self.author.username,
+            content = self.content,
+        )
 
 class PostImage(models.Model):
     image = models.ImageField()
