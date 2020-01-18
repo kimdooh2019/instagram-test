@@ -14,8 +14,17 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+print('BASE_DIR', BASE_DIR)
+ROOT_DIR = os.path.dirname(BASE_DIR)
+print(ROOT_DIR)
+# MEDIA_ROOT 설정했다고
+# PostImageField 에서 upload_to 에 아무 설정없이 가능한가?
+MEDIA_ROOT = os.path.join(BASE_DIR, '.media')
+MEDIA_URL = '/media/'
 
+STATIC_URL = '/static/'
 
+# print(MEDIA_DIR)
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
@@ -124,4 +133,3 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = '/static/'
