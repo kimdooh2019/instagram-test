@@ -7,8 +7,8 @@ from .models import Post
 
 
 def posts_list_view(request):
-
-    posts = Post.objects.order_by['-pk']
+    # typeError
+    posts = Post.objects.order_by('-pk')
 
     context = {
         'posts': posts,

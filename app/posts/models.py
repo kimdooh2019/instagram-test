@@ -14,12 +14,14 @@ class Post(models.Model):
     def __str__(self):
         return '{author} : {content}'.format(
             # author은 User을 참조하는데
-            author = self.author.username,
-            content = self.content,
+            author=self.author.username,
+            content=self.content,
         )
 
+
 class PostImage(models.Model):
-    image = models.ImageField()
+    # 이렇게 설정만 하면 올라가는건가?
+    image = models.ImageField(upload_to='posts/images')
     # post (N) - PostImage (M) 관계가 아닌가?
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
 
@@ -33,8 +35,6 @@ class PostComment(models.Model):
 
 
 class PostLike(models.Model):
-    author  = models.ForeignKey(User, on_delete=models.CASCADE)
-    post    = models.ForeignKey(Post, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True)
-
-

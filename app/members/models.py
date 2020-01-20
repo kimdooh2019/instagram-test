@@ -3,4 +3,4 @@ from django.db import models
 
 
 class User(AbstractUser):
-    pass
+    img_profile = models.ImageField('프로필이미지', blank=True, upload_to='userssadf/')
