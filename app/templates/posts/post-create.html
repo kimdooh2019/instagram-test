@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container pt-4">
+
+        <h1>새포스터 작성</h1>
+        <form action="{% url 'posts:comment-create post_pk=post.pk" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+                {% for field in form %}
+                    <div class="form-group">
+                        {{ field }}
+                    </div>
+                {% endfor %}
+                <button type="submit" class="btn btn-primary btn-block">작성</button>
+        </form>
+    </div>
+{% endblock %}

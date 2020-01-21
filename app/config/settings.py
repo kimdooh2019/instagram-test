@@ -41,7 +41,11 @@ SECRET_KEY = '8s-loz((twhh7y*6-)1*s+@_7g=hxkq(1nbl19)n=e_p%dho0d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    '172.16.1.116',
+]
 # members (app) . User (model class)
 AUTH_USER_MODEL = 'members.User'
 
